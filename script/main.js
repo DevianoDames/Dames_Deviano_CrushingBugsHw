@@ -29,7 +29,7 @@ function changeBGImage() {
 	// clear the contents of each drop zone
 	dropZones.forEach(zone => {
 		while (zone.firstChild) {
-		  zone.removeChild(zone.firstChild);
+		  puzzleBoard.appendChild(zone.firstChild);
 		}
 	  });
 	  // reset the position of each puzzle piece
@@ -38,9 +38,7 @@ function changeBGImage() {
    	 	puzzleBoard.appendChild(piece);
   });
   // update the src attribute of each puzzle piece image element
-  puzzlePieces.forEach(piece => {
-    piece.src = `images/puzzle${this.id}/${piece.dataset.puzzleIndex}.jpg`;
-  });
+  
 }
 
 
