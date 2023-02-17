@@ -26,7 +26,24 @@ function changeBGImage() {
 
 	// bug fix #2 should go here. it's at most 3 lines of JS code.
 	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
+	// clear the contents of each drop zone
+	dropZones.forEach(zone => {
+		while (zone.firstChild) {
+		  zone.removeChild(zone.firstChild);
+		}
+	  });
+	  // reset the position of each puzzle piece
+  		puzzlePieces.forEach(piece => {
+    	piece.classList.remove('dropped');
+   	 	puzzleBoard.appendChild(piece);
+  });
+  // update the src attribute of each puzzle piece image element
+  puzzlePieces.forEach(piece => {
+    piece.src = `images/puzzle${this.id}/${piece.dataset.puzzleIndex}.jpg`;
+  });
 }
+
+
 
 function handleStartDrag() { 
 	console.log('started dragging this piece:', this);
