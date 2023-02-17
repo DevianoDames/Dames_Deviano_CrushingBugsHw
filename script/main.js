@@ -63,7 +63,7 @@ function handleDrop(e) {
 	e.preventDefault();
 	console.log('dropped something on me');
 	if (this.children.length > 0) {
-		console.log('Puzzle piece already here');
+		console.log('Puzzle piece already here please change');
 		return;
 	}
 	// bug fix #1 should go here, and it's at most 3 lines of JS code
