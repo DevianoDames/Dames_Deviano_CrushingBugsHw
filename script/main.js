@@ -62,6 +62,10 @@ function handleDragOver(e) {
 function handleDrop(e) { 
 	e.preventDefault();
 	console.log('dropped something on me');
+	if (this.children.length > 0) {
+		console.log('Puzzle piece already here');
+		return;
+	}
 	// bug fix #1 should go here, and it's at most 3 lines of JS code
 
 	// this line is going to move the dragged piece from the left side of the board
