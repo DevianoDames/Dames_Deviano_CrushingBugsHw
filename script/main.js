@@ -39,7 +39,7 @@ function handleStartDrag() {
 function handleDragOver(e) { 
 	e.preventDefault(); // e is shorthand for event
 	// this overrides the default dragover behaviour
-	console.log('dragged over me'); 
+	//console.log('dragged over me'); 
 }
 
 function handleDrop(e) { 
