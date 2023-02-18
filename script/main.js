@@ -11,6 +11,7 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
 	dropZones = document.querySelectorAll('.drop-zone'),
+	appendpuzzlePieces = document.querySelector(".puzzle-pieces"),
 	// store the dragged piece in a global variable
 	// because we need it in the handleDrop function
 	draggedPiece;
@@ -29,15 +30,9 @@ function changeBGImage() {
 	// clear the contents of each drop zone
 	dropZones.forEach(zone => {
 		while (zone.firstChild) {
-		  puzzleBoard.appendChild(zone.firstChild);
+			appendpuzzlePieces.appendChild(zone.firstChild);
 		}
 	  });
-	  // reset the position of each puzzle piece
-  		puzzlePieces.forEach(piece => {
-    	piece.classList.remove('dropped');
-   	 	puzzleBoard.appendChild(piece);
-  });
-  // update the src attribute of each puzzle piece image element
   
 }
 
