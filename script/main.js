@@ -11,6 +11,7 @@ let theButtons = document.querySelectorAll("#buttonHolder img"),
 	puzzleBoard = document.querySelector(".puzzle-board"),
 	puzzlePieces = document.querySelectorAll(".puzzle-pieces img"),
 	dropZones = document.querySelectorAll('.drop-zone'),
+	appendpuzzlePieces = document.querySelector(".puzzle-pieces"),
 	// store the dragged piece in a global variable
 	// because we need it in the handleDrop function
 	draggedPiece;
@@ -29,18 +30,10 @@ function changeBGImage() {
 	// clear the contents of each drop zone
 	dropZones.forEach(zone => {
 		while (zone.firstChild) {
-		  zone.removeChild(zone.firstChild);
+			appendpuzzlePieces.appendChild(zone.firstChild);
 		}
 	  });
-	  // reset the position of each puzzle piece
-  		puzzlePieces.forEach(piece => {
-    	piece.classList.remove('dropped');
-   	 	puzzleBoard.appendChild(piece);
-  });
-  // update the src attribute of each puzzle piece image element
-  puzzlePieces.forEach(piece => {
-    piece.src = `images/puzzle${this.id}/${piece.dataset.puzzleIndex}.jpg`;
-  });
+  
 }
 
 
@@ -59,7 +52,13 @@ function handleDragOver(e) {
 	//console.log('dragged over me'); 
 }
 
-
+function handleDrop(e) { 
+	e.preventDefault();
+	console.log('dropped something on me!');
+	if (this.children.length > 0) {
+		console.log('Puzzle piece already here please change!!');
+		return;
+	}
 	// bug fix #1 should go here, and it's at most 3 lines of JS code
 
 	// this line is going to move the dragged piece from the left side of the board
