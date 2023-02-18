@@ -54,7 +54,7 @@ function handleDragOver(e) {
 
 function handleDrop(e) { 
 	e.preventDefault();
-	console.log('dropped something on me');
+	console.log('dropped something on me!');
 	if (this.children.length > 0) {
 		console.log('Puzzle piece already here please change!');
 		return;
